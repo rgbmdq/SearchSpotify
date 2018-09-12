@@ -6,14 +6,9 @@ import theme from './theme'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from 'react-css-themr'
-import { BrowserRouter as Router } from 'react-router-dom'
-
-import Login from './Components/Login'
-import Home from './Components/Home'
-import Header from './Components/Header'
-import Notifications from './Components/Notifications'
-import { OnlyPublicRoute, PrivateRoute } from './Components/Routing'
-
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Search from './Components/Search'
+import Album from './Components/Album';
 const __store = store()
 const __init_el = document.createElement('div')
 __init_el.id = style.reactinit
@@ -21,16 +16,13 @@ __init_el.id = style.reactinit
 ReactDOM.render(
   <Provider store={__store}>
     <ThemeProvider theme={theme}>
-      <div>
-        <Notifications />
-        <Router>
-          <div>
-            <Header />
-            <PrivateRoute exact path="/" component={Home} />
-            <OnlyPublicRoute exact path="/login" component={Login} />
-          </div>
-        </Router>
-      </div>
+      <Router>
+        <div>
+          <Search />
+          <Route path='/' component={Album} />
+          <Route path='/:id' component={Album} />
+        </div>
+      </Router>
     </ThemeProvider>
   </Provider>,
   document.body.appendChild(__init_el)
