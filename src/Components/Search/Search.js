@@ -24,18 +24,19 @@ export default class Search extends React.Component {
   }
 
   onSearch() {
-    GetData(this.state.query)
+    if(this.state.query.length > 3) {
+      GetData(this.state.query)
       .then(response => {
           response.json().then(response => this.props.onSearchSuccess(response))
       })
-      .catch(error => this.props.onSearchFailure(error))
+      .catch(error => this.props.onSearchFailure(error))}
   }
 
   render() {
     return (
       <div className={style.imputContainer}>
         <i onClick={this.onSearch} className={"material-icons"}>search</i>
-        <input className={style.imputView} id='inputSearch' type='search' onChange={this.inputChanged} placeholder='Search' />
+        <input onKeyUp={this.onSearch} className={style.imputView} id='inputSearch' type='search' onChange={this.inputChanged} placeholder='Search' />
       </div>
     )
   }
