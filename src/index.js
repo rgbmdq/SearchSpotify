@@ -8,7 +8,8 @@ import { Provider } from 'react-redux'
 import { ThemeProvider } from 'react-css-themr'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Search from './Components/Search'
-import Album from './Components/Album';
+import Album from './Components/Album'
+import ViewComment from './Components/ViewComment/ViewComment';
 const __store = store()
 const __init_el = document.createElement('div')
 __init_el.id = style.reactinit
@@ -20,7 +21,7 @@ ReactDOM.render(
         <div>
           <Search />
           <Route path='/' component={Album} />
-          <Route path='/:id' component={Album} />
+          <Route path='/:id' component={ViewComment} />
         </div>
       </Router>
     </ThemeProvider>
