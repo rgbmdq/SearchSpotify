@@ -6,7 +6,7 @@
     height: 180px;
     background: rgba(40, 40, 40, 0.85);
     margin: 0 auto;
-    margin-bottom: 5px;
+    margin-bottom: 14px;
     .itemImg{
         width: 180px;
         img{
@@ -33,6 +33,7 @@
             color: #ffffff;
         }
         h3{
+            text-transform: uppercase;
             padding-left: 30px;
             color :#a0a097;
             font-family: 'Open Sans', sans-serif;
@@ -52,7 +53,7 @@
             height: 30px;
             background-color: #404040;
             border-radius: 50px;
-            padding-top: 12px;
+            padding-top: 11px;
             padding-left: 5.5px;
             padding-bottom: 5.5px;
             margin-bottom: 30px;
@@ -69,7 +70,7 @@
                 margin-right: 370px;
                 text-decoration: none;
                 color: #03bb4f;
-                
+                letter-spacing: 0.2px;
             }
         }
     }

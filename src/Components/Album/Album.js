@@ -8,7 +8,7 @@ const arToComponent = (albums) =>{
     return null;
   }
     return(
-        albums.map( (album, index) => (<Item key={index} album={album} />))
+        albums.map( (album) => (<Item key={album.id} album={album} />))
     )
 }
 export default class Album extends React.Component {
