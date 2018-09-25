@@ -1,8 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import style from './style.scss'
-import Item from './Item/Item'
+import Item from './Item'
 
+
+// convert the array into Commponent
 const arToComponent = (albums) =>{
   if(!albums || albums.length === 0){
     return null;

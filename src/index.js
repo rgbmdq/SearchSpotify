@@ -9,7 +9,7 @@ import { ThemeProvider } from 'react-css-themr'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Search from './Components/Search'
 import Album from './Components/Album'
-import ViewComment from './Components/ViewComment/ViewComment';
+import ViewComment from './Components/ViewComment';
 const __store = store()
 const __init_el = document.createElement('div')
 __init_el.id = style.reactinit
@@ -20,8 +20,8 @@ ReactDOM.render(
       <Router>
         <div>
           <Search />
-          <Route path='/' component={Album} />
-          <Route path='/:id' component={ViewComment} />
+          <Route path='/' component={Album} exact />
+          <Route path='/ViewComment/:id' component={ViewComment} exact />
         </div>
       </Router>
     </ThemeProvider>

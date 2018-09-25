@@ -1,37 +1,36 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import CircularProgress from '@material-ui/core/CircularProgress'
 import style from './style.scss'
 import CButton from './../../CButton/CButton'
+import ButtonBack from '../../CButton/ButtonBack/ButtonBack';
 
 export default class Item extends React.Component {
   static get propTypes() {
     return {
+        redirect: PropTypes.bool,
         album: PropTypes.object,
-        setRedirect: PropTypes.func,
-        history: PropTypes.func
+        history: PropTypes.object
     }
   }
   constructor() {
     super()
-    this.setRedirect = this.setRedirect.bind(this) 
+    this.back = this.back.bind(this)
+    this.viewComment = this.viewComment.bind(this)
   }
+  //set buttons redirect
   viewComment() {
-    this.props.history.push('/comment')
+    const id = this.props.album.id;
+    this.props.history.push('/ViewComment/'+ id )
   }
   back(){
     this.props.history.push('/')
   }
 
-  setRedirect() {
-    this.setState({
-      redirect: true
-    })
-  }
-
   render() {
-    return (
+    return this.props.album ? (
       <div className={style.itemView}>
-        <div className={style.itemImg}><img src={this.props.album.images[1].url} /></div>
+        <div className={style.itemImg}><img src={this.props.album.images[0].url} /></div>
         <div className={style.dataItem}>
           <h3>{this.props.album.artists[0].name}</h3>
           <h1>{this.props.album.name}</h1>
@@ -41,13 +40,18 @@ export default class Item extends React.Component {
               <a id={style.textVol} href={this.props.album.artists[0].external_urls.spotify} target={"_blank"}>Listen on Spotify</a>
             </div>
             <div className={style.CButtonContainer}>
-              {this.props.setRedirect 
-                ? <CButton text={"VIEW COMMENTS"} className={style.CButton} onClick={this.viewComment} />
-                : <CButton text={"BACK TO SEARCH"} className={style.CButton} onClick={this.back} />
+              { 
+                this.props.redirect == false
+                ? (<ButtonBack text={"BACK TO SEARCH"} className={style.CButton} onClick={this.back} />)
+                : (<CButton text={"VIEW COMMENTS"} className={style.CButton} onClick={this.viewComment} />)      
               }
             </div>                    
           </div>
         </div>
+      </div>
+    ) : (
+      <div className={style.circularProgressContainer}> 
+        <CircularProgress className={style.circularProgress} />
       </div>
     )
   }

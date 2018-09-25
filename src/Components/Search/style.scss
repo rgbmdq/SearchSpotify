@@ -1,30 +1,32 @@
 
-.imputContainer {
+.inputContainer {
     font-family: 'Open Sans', sans-serif;
 	width: 100%;
 	height: 51px;
     background-color: #282828;
     box-shadow: 1px 8px 17px -2px rgba(0,0,0,0.75);
+    display: flex;
     i{
         cursor: pointer;
         font-size: 18px;
         margin-top: 17px;
         margin-bottom: 15px;
-        margin-left: 12%;
+        margin-left: 10%;
+        position: absolute;
         width: 12px;
         height: 14px;
-        position: absolute;
         color: #797878;
         padding-left: 7px;
     }
-    .imputView {
+    .inputView {
         border: 0.5px solid #222222;
         padding-left: 25px;
         outline: none;
         margin-top: 14px;
         margin-bottom: 24px;
-        margin-left: 12%;
-        width: 75%;
+        margin-left: 10%;
+        width: 80%;
+        min-width: 835px;
         height: 24px;
         border-radius: 40px;
         background-color: #ffffff;
@@ -46,3 +48,37 @@
           }
     }
 }
+
+
+@media only screen and (max-width: 1024px) {
+    .inputContainer {
+        width: 100%;
+    }
+    .inputContainer .inputView{
+        width: 84%;
+        
+        min-width: 630px;
+        margin-left: 7.5%;
+    }
+    .inputContainer i{
+        margin-left: 7.5%;
+        padding-left: 7px;
+    }
+} 
+
+@media only screen and (max-width: 768px) {
+    .inputContainer {
+        width: 100%;
+        
+        min-width: 320px;
+    }
+    .inputContainer .inputView{
+        width: 90%;
+        min-width: 292px;
+        margin-left: 5%;
+    }
+    .inputContainer i{
+        margin-left: 5%;
+        padding-left: 7px;
+    }
+} 

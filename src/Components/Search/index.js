@@ -1,14 +1,16 @@
 import Search from './Search'
 import { connect } from 'react-redux'
-import { actions } from '../../Actions/Albums'
+import { actionsAlbums } from '../../Actions/Albums'
 import { withRouter } from 'react-router-dom'
 
+
+// We Dispatch the Action
 const mapDispatchToProps = dispatch => ({
-  onSearchSuccess(query) {
-    dispatch(actions.SearchResolved(query))
+  onSearchSuccess(album) {
+    dispatch(actionsAlbums.SearchResolved(album))
   },
   onSearchFailure(error){
-    dispatch(actions.SearchRejected(error))
+    dispatch(actionsAlbums.SearchRejected(error))
   }
 })
 

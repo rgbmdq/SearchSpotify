@@ -1,15 +1,13 @@
 import Album from './Album'
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
 
 const mapStateToProps = state => ({
   albums: state.Album.albums.items
 })
 
-//Redux se encarga de pasarle los states a el componente "Album"
-export default withRouter(
-  connect(
+//Redux is responsible for passing the states in to the component "Album"
+export default connect(
     mapStateToProps,
     null
   )(Album)
-)
+

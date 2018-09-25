@@ -19,24 +19,25 @@ export default class Search extends React.Component {
   
   inputChanged(e) {
     this.setState({
-        query: e.target.value
+        album: e.target.value
     })
   }
-
+  // We consume the Api and we work on the answer
   onSearch() {
-    if(this.state.query.length > 3) {
-      GetData(this.state.query)
+    if(this.state.album.length > 3) {
+      GetData(this.state.album)
       .then(response => {
           response.json().then(response => this.props.onSearchSuccess(response))
       })
-      .catch(error => this.props.onSearchFailure(error))}
+      .catch(error => this.props.onSearchFailure(error))
+    }
   }
 
   render() {
     return (
-      <div className={style.imputContainer}>
+      <div className={style.inputContainer}>
         <i onClick={this.onSearch} className={"material-icons"}>search</i>
-        <input onKeyUp={this.onSearch} className={style.imputView} id='inputSearch' type='search' onChange={this.inputChanged} placeholder='Search' />
+        <input onKeyUp={this.onSearch} className={style.inputView} id='inputSearch' type='search' onChange={this.inputChanged} placeholder='Search' />
       </div>
     )
   }
