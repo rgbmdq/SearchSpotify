@@ -1,0 +1,140 @@
+/*
+container form
+*/
+.formComment { 
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    min-width: 752px;
+    height: 156px;
+    background: #282828;
+    margin: 0 auto;
+    margin-bottom: 14px;
+    padding: 15px;
+}
+
+.topContainer{
+  width: 100%;
+  height: 82px;
+  display: flex;
+}
+
+    .inputContainer {
+      width: 88.5%;
+      height: 82px;
+      
+    ::-webkit-input-placeholder { 
+      color: #03bb4f;
+    }
+    }
+    .inputEmail {
+      color: white;
+      outline: none;
+      padding-left: 11.3px;
+      width: 100%;
+      height: 24px;
+      border-radius: 40px;
+      background-color: rgba(31, 31, 31, 0.7);
+      border: solid 1px #404040;
+      margin-bottom: 8px;
+    }
+    
+    .inputText {
+      color: white;
+      outline: none;
+      padding-left: 11.3px;
+      width: 100%;
+      height: 68px;
+      border-radius: 4px;
+      background-color: rgba(31, 31, 31, 0.7);
+      border: solid 1px #404040;
+    }
+
+    .circleContainer{
+      display: flex;
+      flex-direction: column;
+      width: 80px;
+      height: 80px; 
+      .circle{
+        width: 50px;
+        height: 50px;
+        background-color: #404040;
+        border-radius: 50%;
+      }
+    }
+  .botContainer{
+      padding: 18px;
+      margin-right: 5px;
+      margin-top: 74px;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .buttonAdd{  
+      width: 114px;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      outline: none;
+      font-family: 'Open Sans', sans-serif;
+      height: 30px;
+      border-radius: 40px;
+      color: #ddd;
+      background-color: rgba(31, 31, 31, 0.7);
+      border: solid 1px #03bb4f; 
+      ::-webkit-input-placeholder{ 
+        color:#03bb4f;
+      }  
+    }
+
+@media only screen and (max-width: 1024px) {
+  .formComment{
+      width: 80%;
+      min-width: 600px;
+  }
+
+} 
+
+@media only screen and (max-width: 768px) {
+  .formComment{
+    min-width: 430px;
+  }
+  
+  .inputEmail { 
+    min-width: 226px;
+  }
+  .inputText {
+    width: 110%;
+    min-width: 264px; 
+    margin-left: -40px;
+  }
+  .circleContainer{
+    display: flex;
+    flex-direction: column;
+    width: 40px;
+    height: 40px; 
+    .circle{
+      width: 25px;
+      height: 25px;
+      background-color: #404040;
+      border-radius: 50%;
+    }
+  }
+  .botContainer{
+    display: flex;
+    justify-content: center;
+  }
+
+} 
+
+@media only screen and (max-width: 500px) {
+    
+  .formComment{
+      min-width: 292px;
+    }
+    
+  .inputText {
+    width: 117%;
+    min-width: 264px; 
+    margin-left: -40px;
+  }
+  }
