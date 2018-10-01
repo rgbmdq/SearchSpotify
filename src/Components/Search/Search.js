@@ -24,7 +24,7 @@ export default class Search extends React.Component {
   }
   // We consume the Api and we work on the answer
   onSearch() {
-    if(this.state.album.length > 3) {
+    if(this.state.album && this.state.album.trim().length > 3) {
       GetData(this.state.album)
       .then(response => {
           response.json().then(response => this.props.onSearchSuccess(response))

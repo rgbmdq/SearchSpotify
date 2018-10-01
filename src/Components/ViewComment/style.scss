@@ -46,17 +46,19 @@
     color: #03bb4f;
     padding-right: 10px; 
 }
-.containerLeft .iconAdd{
+.containerLeft #iconAdd{
   cursor: pointer;
   border-radius: 50%;
   background-color: #404040;
   width: 23px;
   height: 23px;
+  padding: 2.5px;
 }
-.containerLeft .iconAdd i {
+.containerLeft #iconAdd i {
   color: #03bb4f;
   object-fit: contain;
   font-style: inherit;
+  font-size: 18px;
   font-weight: 100; 
   line-height: normal; 
 }

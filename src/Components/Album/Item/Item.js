@@ -34,10 +34,12 @@ export default class Item extends React.Component {
         <div className={style.dataItem}>
           <h3>{this.props.album.artists[0].name}</h3>
           <h1>{this.props.album.name}</h1>
-          <div className={style.botContainer}>            
-            <i id={style.iconVol} className={"material-icons"}>volume_up</i>         
-            <div className={style.listen}>
-              <a id={style.textVol} href={this.props.album.artists[0].external_urls.spotify} target={"_blank"}>Listen on Spotify</a>
+          <div className={style.botContainer}>  
+            <div className={style.prueba}>          
+              <i id={style.iconVol} className={"material-icons"}>volume_up</i>         
+              <div className={style.listen}>
+                <a className={style.textVol} href={this.props.album.artists[0].external_urls.spotify} target={"_blank"}>Listen on Spotify</a>
+              </div>
             </div>
             <div className={style.CButtonContainer}>
               { 

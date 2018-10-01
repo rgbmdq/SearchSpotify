@@ -89,12 +89,12 @@ export default class ViewComment extends React.Component {
           { this.state.formClicked ? (
             <div className={style.containerLeft}> 
               <div className={style.textAdd} />
-              <div className={style.iconAdd}><i onClick={this.isclicked} className={"material-icons"}>clear</i></div>
+              <div id={style.iconAdd}><i onClick={this.isclicked} className={"material-icons"}>clear</i></div>
             </div>
           ) : (
             <div className={style.containerLeft}> 
               <div className={style.textAdd}>Add comment</div>
-              <div className={style.iconAdd}><i onClick={this.isclicked} className={"material-icons"}>add</i></div>
+              <div id={style.iconAdd}><i onClick={this.isclicked} className={"material-icons"}>add</i></div>
             </div>
           ) }
         </div>

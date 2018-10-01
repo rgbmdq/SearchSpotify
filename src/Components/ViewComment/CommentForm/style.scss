@@ -100,6 +100,7 @@ container form
   }
   
   .inputEmail { 
+    width: 102%;
     min-width: 226px;
   }
   .inputText {
@@ -120,6 +121,7 @@ container form
     }
   }
   .botContainer{
+    padding-top: 15px;
     display: flex;
     justify-content: center;
   }
@@ -133,7 +135,7 @@ container form
     }
     
   .inputText {
-    width: 117%;
+    width: 115%;
     min-width: 264px; 
     margin-left: -40px;
   }

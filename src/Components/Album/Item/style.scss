@@ -8,17 +8,17 @@
     margin: 0 auto;
     margin-bottom: 14px;
     .itemImg{
-        width: 180px;
         img{
             height: 180px;
             width: 180px;
         }
     }
     .dataItem{
-        width: 82%;
-        height: 180px;
+        width: 100%;
+        height: 200px;
         color: white;
         h1{
+            margin-top: -10px;
             padding-left: 30px;
             width: auto;
             height: 46px;
@@ -33,6 +33,7 @@
             color: #ffffff;
         }
         h3{
+            padding-top: 11px;
             text-transform: uppercase;
             padding-left: 30px;
             color :#a0a097;
@@ -40,12 +41,11 @@
             font-size: 12px;
         }
         .botContainer{ 
-        padding-left: 30px;
-        padding-bottom: 30px;
+        padding: 30px;
+        padding: 21px;
         width: 100%;  
         display: flex;
-        justify-content: space-between;
-        
+        justify-content: space-between;       
         #iconVol{
             line-height: 0.4;
             width: 30px;
@@ -56,33 +56,34 @@
             padding-top: 13px;
             padding-left: 8.5px;
             padding-bottom: 5.5px;
-            margin-bottom: 30px;
             font-size: 13px;
         }
         #iconLeft{
             background-color: white;
             height: 30px;
         }
-        .listen{
-            width: 500px;
-            height: 30px;
-            position: absolute;
-            margin-left: 40px;
-            margin-top: 9px;
-            #textVol{
-                padding: 5px;
-                margin-right: 370px;
-                text-decoration: none;
-                color: #03bb4f;
-                letter-spacing: 0.2px;
+        .prueba{           
+            display: flex;
+            flex-direction: row;
+            .listen{
+                padding-top: 8px;
+                height: 30px;
+                .textVol{
+                    padding: 15px;
+                    text-decoration: none;
+                    color: #03bb4f;    
+                    letter-spacing: 0.2px;
+                }
             }
-        }
+            .CButtonContainer{
+                display: flex;
+                justify-content: flex-end;
+                padding-right: -20px;
+            }
+        }   
     }
 
-    }
-}
-.CButtonContainer{
-    margin-top: 2px;
+  }
 }
 
 .circularProgressContainer{
@@ -104,87 +105,64 @@
     .itemView{
         width: 80%;
         min-width: 600px;
-    }
-   
+    } 
 } 
 
 @media only screen and (max-width: 768px) {
     .itemView{
-        min-width: 430px;
-        
+        min-width: 430px;    
         .dataItem h1{
-            width: auto;
             font-size: 170%;
         }
+    }         
+        .listen .textVol{
+            display: none;
+        }
     }
-    
-    .CButtonContainer{
-        margin-left: 2px;
-    }
-    .listen #textVol{
-        display: none;
-    }
-}
-
 
 @media only screen and (max-width: 500px) {
-    
     .itemView{
         min-width: 292px;
-        height: 337px;
-        flex-direction: column;    
-        align-items: center;
-        
-    .itemImg{
-        margin-top: 9px;
-        margin-left: 38px;
-        img{
-            width: 132px;
-            height: 132px;
-        }
+				height: 337px;				
+				flex-direction: column;   				
+				justify-content: center;
+        .itemImg{
+                display: flex;			  
+                justify-content: center;
+                padding-top: 9px;
+                img{
+                    width: 132px;
+                    height: 132px;
+                }
         }
         .dataItem h1{
-        
-            font-size: 30px;   
-        }
-
-    }
-    
-    .dataItem{
-        margin: 0 auto;
-          
-        h1{        
-            margin-left: -43px;
-            padding-left: 10%;
-            margin-top: -5px;  
-            margin-top: 5px;
-            margin-bottom: 15px;
-            font-size: 30px;        
-        }
-        h3{          
-            margin-left: -43px;
-        }
-        .botContainer{  
-            
-        
-            margin-top: -10px;        
-            flex-direction: column;
-        }
-        .CButtonContainer{  
-            margin-top: -7px;
-            margin-left: 5%;
-        }
-        .listen{
-            #textVol{
-                
-            margin-left: -43px;
-            margin-top: -4px;
-                display: block;
-            }
-        }
-        
-        #iconVol{                
-            margin-left: -43px;
-        }
-    }
-} 
+					text-align: left;
+					font-size: 30px; 
+					margin-left: -18px;  
+			}
+			.dataItem h3{
+				margin-left: -18px; 
+			}
+				.botContainer{				
+					display: flex;   
+					flex-direction: column;
+					height: 100px;
+					width: 100%;
+					.prueba{
+						margin-top: -30px;					
+						margin-left: -9px;
+					}
+					.listen{
+						.textVol{		
+							margin-top: -15px;
+								display: block;
+						}
+					}
+					.CButtonContainer{
+						margin-right: -32px;
+						display: flex;
+						justify-content: center;
+					}
+				}
+    } 
+}
