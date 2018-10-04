@@ -1,12 +1,6 @@
-/**
- * import { fork, all } from 'redux-saga/effects'
-import Login from './Login'
+import { fork, all } from 'redux-saga/effects'
+import Search from './Search'
 
 export default function*() {
-  yield all(fork(Login))
-}
- */
-
-export default function*() {
-  console.log("Probando saga")
+  yield all([fork(Search)])
 }

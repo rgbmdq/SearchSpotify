@@ -1,13 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import style from './style.scss'
-import { GetData } from '../../API/Album'
 
 export default class Search extends React.Component {
   static get propTypes() {
     return {
-      onSearchSuccess: PropTypes.func,   
-      onSearchFailure: PropTypes.func
+      onSearch: PropTypes.func
     }
   }
 
@@ -22,17 +20,12 @@ export default class Search extends React.Component {
         album: e.target.value
     })
   }
-  // We consume the Api and we work on the answer
+  
   onSearch() {
     if(this.state.album && this.state.album.trim().length > 3) {
-      GetData(this.state.album)
-      .then(response => {
-          response.json().then(response => this.props.onSearchSuccess(response))
-      })
-      .catch(error => this.props.onSearchFailure(error))
-    }
+      this.props.onSearch(this.state.album)
   }
-
+  }
   render() {
     return (
       <div className={style.inputContainer}>
