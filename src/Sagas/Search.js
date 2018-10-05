@@ -1,6 +1,6 @@
 import { GetData } from './../API/Album'
 import { actionsAlbums, types } from './../Actions/Albums'
-import { call, put, takeEvery } from 'redux-saga/effects'
+import { call, put, throttle } from 'redux-saga/effects'
 
 function* searchHandler (data){
   try {
@@ -16,5 +16,5 @@ function* searchHandler (data){
 }
 
 export default function*() {
-  yield takeEvery(types.SEARCH_ALBUM, searchHandler)
+  yield throttle(7, types.SEARCH_ALBUM, searchHandler)
 }
