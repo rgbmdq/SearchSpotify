@@ -55,7 +55,6 @@ export default class CommentForm extends React.Component {
   }
 
   _updateInputs(email, textInput) {
-    console.log(email)
     const validations = this._validateInputs(email, textInput)
     this.setState({
       email,

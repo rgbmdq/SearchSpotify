@@ -4,7 +4,6 @@ import { call, put, throttle } from 'redux-saga/effects'
 
 function* searchHandler (data){
   try {
-    console.log(data.album)
     const response = yield call(GetData, data.album)
     if(response.ok) {
         yield put(actionsAlbums.SearchResolved(yield response.json()))
