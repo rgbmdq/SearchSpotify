@@ -15,12 +15,6 @@ const mapDispatchToProps = dispatch => ({
   onSearchAlbumData(albumId) {
     dispatch(actionsAlbums.AlbumDataSearch(albumId))
   },
-  onPostCommentSuccess(comment) {
-    dispatch(actions.PostCommentResolved(comment))
-  },
-  onPostCommentFailure(error) {
-    dispatch(actions.PostCommentRejected(error))
-  },
 })
 
 
