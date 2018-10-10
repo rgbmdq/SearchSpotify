@@ -6,23 +6,14 @@ import { connect } from 'react-redux'
 
 
 const mapDispatchToProps = dispatch => ({
-  onSearchCommentSuccess(id) {
-    dispatch(actions.CommentSearchResolved(id))
+  onSearch(albumId) {
+    dispatch(actions.SearchComments(albumId))
   },
-  onSearchCommentFailure(error){
-    dispatch(actions.CommentSearchRejected(error))
+  onPost(comment){
+    dispatch(actions.PostComment(comment))
   },
-  onSearchAlbumDataSuccess(album) {
-    dispatch(actionsAlbums.AlbumSearchIdResolved(album))
-  },
-  onSearchAlbumDataFailure(error) {
-    dispatch(actionsAlbums.AlbumSearchIdRejacteded(error))
-  },
-  onPostCommentSuccess(comment) {
-    dispatch(actions.PostCommentResolved(comment))
-  },
-  onPostCommentFailure(error) {
-    dispatch(actions.PostCommentRejected(error))
+  onSearchAlbumData(albumId) {
+    dispatch(actionsAlbums.AlbumDataSearch(albumId))
   },
 })
 

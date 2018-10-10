@@ -6,11 +6,8 @@ import { withRouter } from 'react-router-dom'
 
 // We Dispatch the Action
 const mapDispatchToProps = dispatch => ({
-  onSearchSuccess(album) {
-    dispatch(actionsAlbums.SearchResolved(album))
-  },
-  onSearchFailure(error){
-    dispatch(actionsAlbums.SearchRejected(error))
+  onSearch(album) {
+    dispatch(actionsAlbums.Search(album))
   }
 })
 

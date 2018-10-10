@@ -3,8 +3,6 @@ import style from './style.scss'
 import Item from './../Album/Item'
 import ItemComment from './ItemComment/ItemComment'
 import PropTypes from 'prop-types'
-import { GetCommentData, PostCommentData } from '../../API/Comment'
-import { GetSpecificAlbum} from '../../API/Album'
 import CommentForm from './CommentForm/CommentForm';
 
 
@@ -24,12 +22,9 @@ export default class ViewComment extends React.Component {
       comments: PropTypes.array,
       album: PropTypes.object,
       match: PropTypes.object,
-      onSearchCommentSuccess: PropTypes.func,   
-      onSearchCommentFailure: PropTypes.func,
-      onSearchAlbumDataSuccess: PropTypes.func,
-      onSearchAlbumDataFailure: PropTypes.func,
-      onPostCommentSuccess: PropTypes.func,
-      onPostCommentFailure: PropTypes.func,
+      onSearch: PropTypes.func,
+      onSearchAlbumData: PropTypes.func,
+      onPost: PropTypes.func,
     }
   }
   
@@ -54,26 +49,22 @@ export default class ViewComment extends React.Component {
   }
 
   newComment(email, inputText) {
-    PostCommentData(email, inputText, this.props.match.params.id)
-    .then(response => {
-      response.json().then(response => this.props.onPostCommentSuccess(response))
-      })  
-    .catch(error => this.props.onPostCommentFailure(error))
+    if(email, inputText, this.props.match.params.id) {
+      const albumId = this.props.match.params.id;
+      this.props.onPost({email, inputText, albumId})
+    }
   }
+  
   searchComment() {
-    GetCommentData(this.props.match.params.id)
-    .then(response => {
-      response.json().then(response => this.props.onSearchCommentSuccess(response))
-      })  
-    .catch(error => this.props.onSearchCommentFailure(error))
+    if(this.props.match.params.id) {
+      this.props.onSearch(this.props.match.params.id)
+    }
   }
-
+  
   searchAlbumData() {
-    GetSpecificAlbum(this.props.match.params.id)
-    .then(response => {
-      response.json().then(response => this.props.onSearchAlbumDataSuccess(response))
-      })  
-    .catch(error => this.props.onSearchAlbumDataFailure(error))
+    if(this.props.match.params.id) {
+      this.props.onSearchAlbumData(this.props.match.params.id)
+    }
   }
   componentWillMount() {
     this.searchAlbumData()

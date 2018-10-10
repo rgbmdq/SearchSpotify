@@ -2,7 +2,9 @@ export const types = {
   SEARCH_ALBUM_RESOLVED: 'SEARCH_ALBUM_RESOLVED',
   SEARCH_ALBUM_REJECTED: 'SEARCH_ALBUM_REJECTED',
   SEARCH_SPECIFIC_RESOLVED: 'SEARCH_SPECIFIC_RESOLVED',
-  SEARCH_SPECIFIC_REJECTED: 'SEARCH_SPECIFIC_REJECTED'
+  SEARCH_SPECIFIC_REJECTED: 'SEARCH_SPECIFIC_REJECTED',
+  SEARCH_ALBUM: 'SEARCH_ALBUM',
+  SEARCH_ALBUM_DATA: 'SEARCH_ALBUM_DATA'
 }
 
 export const actionsAlbums = {
@@ -21,6 +23,18 @@ export const actionsAlbums = {
     return {
       type: types.SEARCH_ALBUM_REJECTED,
       error
+    }
+  },
+  Search(album) {
+    return{
+      type: types.SEARCH_ALBUM,
+      album
+    }
+  },
+  AlbumDataSearch(albumId) {
+    return{
+      type: types.SEARCH_ALBUM_DATA,
+      albumId
     }
   },
   

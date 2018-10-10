@@ -3,6 +3,8 @@ export const types = {
   SEARCH_COMMENT_REJECTED: 'SEARCH_COMMENT_REJECTED',
   POST_COMMENT_RESOLVED: 'POST_COMMENT_RESOLVED',
   POST_COMMENT_REJECTED: 'POST_COMMENT_REJECTED',
+  SEARCH_COMMENT: 'SEARCH_COMMENT',
+  POST_COMMENT: 'POST_COMMENT'
 }
 
 export const actions = {
@@ -21,6 +23,20 @@ export const actions = {
     return {
       type: types.SEARCH_COMMENT_REJECTED,
       error
+    }
+  },
+  
+  SearchComments(albumId) {
+    return{
+      type: types.SEARCH_COMMENT,
+      albumId
+    }
+  },
+
+  PostComment(comment) {
+    return{
+      type: types.POST_COMMENT,
+      comment
     }
   },
 
