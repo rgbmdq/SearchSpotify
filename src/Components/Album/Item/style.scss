@@ -1,0 +1,169 @@
+.itemView{
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    width: 70%;
+    min-width: 752px;
+    height: 180px;
+    background: rgba(40, 40, 40, 0.85);
+    margin: 0 auto;
+    margin-bottom: 14px;
+    .itemImg{
+        img{
+            height: 180px;
+            width: 180px;
+        }
+    }
+    .dataItem{
+        width: 100%;
+        height: 200px;
+        color: white;
+        h1{
+            margin-top: -10px;
+            padding-left: 30px;
+            width: auto;
+            height: 46px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 30px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1;
+            letter-spacing: normal;
+            text-align: left;
+            color: #ffffff;
+        }
+        h3{
+            padding-top: 11px;
+            text-transform: uppercase;
+            padding-left: 30px;
+            color :#a0a097;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 12px;
+        }
+        .botContainer{ 
+        padding: 30px;
+        padding: 21px;
+        width: 100%;  
+        display: flex;
+        justify-content: space-between;       
+        #iconVol{
+            line-height: 0.4;
+            width: 30px;
+            min-width: 30px;
+            height: 30px;
+            background-color: #404040;
+            border-radius: 50px;
+            padding-top: 13px;
+            padding-left: 8.5px;
+            padding-bottom: 5.5px;
+            font-size: 13px;
+        }
+        #iconLeft{
+            background-color: white;
+            height: 30px;
+        }
+        .prueba{           
+            display: flex;
+            flex-direction: row;
+            .listen{
+                padding-top: 8px;
+                height: 30px;
+                .textVol{
+                    padding: 15px;
+                    text-decoration: none;
+                    color: #03bb4f;    
+                    letter-spacing: 0.2px;
+                }
+            }
+            .CButtonContainer{
+							
+     				 	 margin-right: -5px;
+                display: flex;
+                justify-content: flex-end;
+            }
+        }   
+    }
+
+  }
+}
+
+.circularProgressContainer{
+    display: flex;
+    width: 70%;
+    min-width: 750px;
+    height: 180px;
+    background: rgba(40, 40, 40, 0.85);
+    margin: 0 auto;
+    margin-bottom: 14px;
+    .circularProgress{
+        margin: 70px auto;
+        height: 200px;
+        width: 200px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .itemView{
+        width: 80%;
+        min-width: 600px;
+    } 
+} 
+
+@media only screen and (max-width: 768px) {
+    .itemView{
+        min-width: 430px;    
+        .dataItem h1{
+            font-size: 170%;
+        }
+    }         
+        .listen .textVol{
+            display: none;
+        }
+    }
+
+@media only screen and (max-width: 500px) {
+    .itemView{
+        min-width: 292px;
+				height: 337px;				
+				flex-direction: column;   				
+				justify-content: center;
+        .itemImg{
+                display: flex;			  
+                justify-content: center;
+                padding-top: 9px;
+                img{
+                    width: 132px;
+                    height: 132px;
+                }
+        }
+        .dataItem h1{
+					text-align: left;
+					font-size: 30px; 
+					margin-left: -18px;  
+			}
+			.dataItem h3{
+				margin-left: -18px; 
+			}
+				.botContainer{				
+					display: flex;   
+					flex-direction: column;
+					height: 100px;
+					width: 100%;
+					.prueba{
+						margin-top: -30px;					
+						margin-left: -9px;
+					}
+					.listen{
+						.textVol{		
+							margin-top: -15px;
+								display: block;
+						}
+					}
+					.CButtonContainer{
+						margin-right: -32px;
+						display: flex;
+						justify-content: center;
+					}
+				}
+    } 
+}

@@ -1,0 +1,83 @@
+.container{
+  font-family: 'Open Sans', sans-serif;
+  padding-top: 24px;
+  width: 100%;
+  height: 100%;
+  min-height: 700px;
+  background-color: #181818;
+}
+.newCommentContainer{
+    margin: 30px auto;
+    margin-bottom: 12px;
+    width: 70%;
+    min-width: 750px;
+    height: 23px;
+    display: flex;
+    justify-content: space-between;
+}
+.newCommentContainer p {
+  width: 86px;
+  height: 17px;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.6px;
+  text-align: left;
+  color: #a0a097;
+  margin-top: 0px;
+}
+.newCommentContainer .containerLeft{
+    display: flex;
+    justify-content: space-between;
+}
+.containerLeft .textAdd { 
+    margin-top: 0px;
+    width: 116px;
+    height: 18px;
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.2px;
+    text-align: right;
+    color: #03bb4f;
+    padding-right: 10px; 
+}
+.containerLeft #iconAdd{
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #404040;
+  width: 23px;
+  height: 23px;
+  padding: 2.5px;
+}
+.containerLeft #iconAdd i {
+  color: #03bb4f;
+  object-fit: contain;
+  font-style: inherit;
+  font-size: 18px;
+  font-weight: 100; 
+  line-height: normal; 
+}
+
+@media only screen and (max-width: 1024px) {
+  .newCommentContainer{
+      width: 80%;
+      min-width: 600px;
+  }
+
+} 
+
+@media only screen and (max-width: 768px) {
+  .newCommentContainer{
+    min-width: 430px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .newCommentContainer{
+    min-width: 292px;
+  }
+}

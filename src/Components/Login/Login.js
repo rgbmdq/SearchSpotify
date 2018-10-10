@@ -11,8 +11,8 @@ export default class Login extends React.Component {
     return {
       onLoginSuccess: PropTypes.func,
       onLoginFailure: PropTypes.func,
-      onRegister: PropTypes.func,
-      history: PropTypes.object.isRequired
+      //onRegister: PropTypes.func,
+      //history: PropTypes.object.isRequired
     }
   }
 
@@ -41,7 +41,7 @@ export default class Login extends React.Component {
     return (
       <div className={style.parentView}>
         <Card>
-          <CardTitle title="Login" subtitle="Log in With your SKEL Account" />
+          <CardTitle title={"Login"} subtitle={"Log in With your SKEL Account"} />
           <CardText>
             <LoginForm onSubmit={this.onLogin} />
           </CardText>

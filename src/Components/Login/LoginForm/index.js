@@ -86,17 +86,17 @@ export default class LoginForm extends React.Component {
       <section>
         <article>
           <Input
-            label="Email"
-            type="email"
-            hint="Complete it with your email account"
+            label={"Email"}
+            type={"email"}
+            hint={"Complete it with your email account"}
             value={this.state.email}
             onChange={val => this._updateInputs(val, this.state.password)}
             error={this.state.validations.email.text}
           />
           <Input
-            label="Password"
-            type="password"
-            hint="Complete it with your password"
+            label={"Password"}
+            type={"password"}
+            hint={"Complete it with your password"}
             value={this.state.password}
             onChange={val => this._updateInputs(this.state.email, val)}
             error={this.state.validations.password.text}
@@ -104,7 +104,7 @@ export default class LoginForm extends React.Component {
         </article>
         <article className={style.buttonContainer}>
           <Button
-            label="Log In"
+            label={"Log In"}
             disabled={!this.state.isValid}
             onClick={this._submit}
             primary
